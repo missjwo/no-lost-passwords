@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name:  No Lost Passwords
-Plugin URI:   https://github.com/missjwo/no_lostpasswords
-Description:  Stop all Lost Passwords emails from being sent. Be warned - every user will be effected.
-Version:      1.0.0
+Plugin URI:   https://github.com/missjwo/no-lost-passwords
+Description:  Stop all Lost Passwords emails from being sent. Be warned - every user will be affected.
+Version:      1.1.0
 Author:       Jenny Wong
 Author URI:   https://twitter.com/miss_jwo/
 Requires PHP: 7.0
@@ -22,6 +22,8 @@ add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\\enqueue_login_style' );
 
 /**
  * Stop all Lost Password emails from being sent.
+ *
+ * @param WP_Error $error The error object to add errors to.
  */
 function lost_password_post( WP_Error $errors ) {
 	$errors->add( 'reset-password-disabled', esc_html__( 'Lost Password function is disabled.', 'no-lost-passwords' ) );
@@ -33,6 +35,6 @@ function lost_password_post( WP_Error $errors ) {
  * Nice quick way to check the activation of the plugin.
  */
 function enqueue_login_style() {
-	wp_enqueue_style( 'miss-jwo-no-lost-passwords', plugins_url( 'no-lost-passwords.css', __FILE__ ));
+	wp_enqueue_style( 'miss-jwo-no-lost-passwords', plugins_url( 'no-lost-passwords.css', __FILE__ ) );
 }
 
