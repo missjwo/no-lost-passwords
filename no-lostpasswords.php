@@ -14,7 +14,6 @@ Domain Path:  /languages
 */
 
 
-
 namespace NoLostPasswords;
 
 setup();
@@ -30,7 +29,6 @@ function setup() {
 /**
  * Stop all Lost Password emails from being sent.
  */
-
 function lostpassword_post( \WP_Error $errors ) {
 
 	$errors->add( 'reset-password-disabled', __('Lost Password function is disabled.', 'no-lostpasswords') );
