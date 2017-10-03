@@ -17,8 +17,8 @@ namespace Miss_Jwo\No_Lost_Passwords;
 
 use WP_Error;
 
-add_action( 'lostpassword_post', 'Miss_Jwo\\No_Lost_Passwords\\lost_password_post' );
-add_action( 'login_enqueue_scripts', 'Miss_Jwo\\No_Lost_Passwords\\enqueue_login_style' );
+add_action( 'lostpassword_post', __NAMESPACE__ . '\\lost_password_post' );
+add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\\enqueue_login_style' );
 
 /**
  * Stop all Lost Password emails from being sent.
