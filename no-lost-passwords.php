@@ -33,6 +33,6 @@ function lost_password_post( WP_Error $errors ) {
  * Nice quick way to check the activation of the plugin.
  */
 function enqueue_login_style() {
-	wp_enqueue_style( 'miss-jwo-no-lost-passwords', plugins_url( 'no-lost-passwords.css', __FILE__ ), false );
+	wp_enqueue_style( 'miss-jwo-no-lost-passwords', plugins_url( 'no-lost-passwords.css', __FILE__ ));
 }
 
