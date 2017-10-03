@@ -14,18 +14,28 @@ Domain Path:  /languages
 */
 
 
-/**
- * Stop all Lost Password emails from being sent.
- */
-if ( ! function_exists( 'nolostpasswords_lostpassword_post' ) ) {
 
-	function nolostpasswords_lostpassword_post() {
-		wp_die( 'Forgot Your Password function is disabled.' );
-	}
+namespace NoLostPasswords;
+
+setup();
+
+function setup() {
+
+	add_action( 'lostpassword_post', 'NoLostPasswords\lostpassword_post', 10, 1 );
+	add_action( 'login_enqueue_scripts', 'NoLostPasswords\enqueue_login_style' );
 
 }
 
-add_action( 'lostpassword_post', 'nolostpasswords_lostpassword_post' );
+
+/**
+ * Stop all Lost Password emails from being sent.
+ */
+
+function lostpassword_post( \WP_Error $errors ) {
+
+	$errors->add( 'reset-password-disabled', __('Lost Password function is disabled.', 'no-lostpasswords') );
+
+}
 
 
 /**
@@ -33,10 +43,9 @@ add_action( 'lostpassword_post', 'nolostpasswords_lostpassword_post' );
  *
  * Nice quick way to check the activation of the plugin.
  */
-function nolostpasswords_enqueue_login_style() {
+function enqueue_login_style() {
 
 	wp_enqueue_style( 'nolostpasswords', plugins_url( 'nolostpasswords.css', __FILE__ ), false );
 
 }
 
-add_action( 'login_enqueue_scripts', 'nolostpasswords_enqueue_login_style' );
