@@ -3,7 +3,7 @@
 Plugin Name:  No Lost Passwords
 Plugin URI:   https://github.com/missjwo/no-lost-passwords
 Description:  Stop all Lost Passwords emails from being sent. Be warned - every user will be affected.
-Version:      1.0.0
+Version:      1.1.0
 Author:       Jenny Wong
 Author URI:   https://twitter.com/miss_jwo/
 Requires PHP: 7.0
