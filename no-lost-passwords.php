@@ -23,7 +23,7 @@ add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\\enqueue_login_style' );
 /**
  * Stop all Lost Password emails from being sent.
  *
- * @param object $errors
+ * @param WP_Error $error The error object to add errors to.
  */
 function lost_password_post( WP_Error $errors ) {
 	$errors->add( 'reset-password-disabled', esc_html__( 'Lost Password function is disabled.', 'no-lost-passwords' ) );
