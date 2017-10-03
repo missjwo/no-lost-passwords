@@ -17,13 +17,13 @@ namespace Miss_Jwo\No_Lost_Passwords;
 
 use WP_Error;
 
-add_action( 'lostpassword_post', 'Miss_Jwo\\No_Lost_Passwords\\lostpassword_post' );
+add_action( 'lostpassword_post', 'Miss_Jwo\\No_Lost_Passwords\\lost_password_post' );
 add_action( 'login_enqueue_scripts', 'Miss_Jwo\\No_Lost_Passwords\\enqueue_login_style' );
 
 /**
  * Stop all Lost Password emails from being sent.
  */
-function lostpassword_post( WP_Error $errors ) {
+function lost_password_post( WP_Error $errors ) {
 	$errors->add( 'reset-password-disabled', esc_html__( 'Lost Password function is disabled.', 'no-lost-passwords' ) );
 }
 
