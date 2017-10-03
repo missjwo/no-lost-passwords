@@ -9,26 +9,22 @@ Author URI:   https://twitter.com/miss_jwo/
 Requires PHP: 7.0
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:  no-lostpasswords
+Text Domain:  no-lost-passwords
 Domain Path:  /languages
 */
 
-namespace NoLostPasswords;
+namespace Miss_Jwo\No_Lost_Passwords;
 
 use WP_Error;
 
-setup();
-
-function setup() {
-	add_action( 'lostpassword_post', 'NoLostPasswords\\lostpassword_post' );
-	add_action( 'login_enqueue_scripts', 'NoLostPasswords\\enqueue_login_style' );
-}
+add_action( 'lostpassword_post', 'Miss_Jwo\\No_Lost_Passwords\\lostpassword_post' );
+add_action( 'login_enqueue_scripts', 'Miss_Jwo\\No_Lost_Passwords\\enqueue_login_style' );
 
 /**
  * Stop all Lost Password emails from being sent.
  */
 function lostpassword_post( WP_Error $errors ) {
-	$errors->add( 'reset-password-disabled', __( 'Lost Password function is disabled.', 'no-lostpasswords' ) );
+	$errors->add( 'reset-password-disabled', esc_html__( 'Lost Password function is disabled.', 'no-lost-passwords' ) );
 }
 
 /**
@@ -37,6 +33,6 @@ function lostpassword_post( WP_Error $errors ) {
  * Nice quick way to check the activation of the plugin.
  */
 function enqueue_login_style() {
-	wp_enqueue_style( 'nolostpasswords', plugins_url( 'nolostpasswords.css', __FILE__ ), false );
+	wp_enqueue_style( 'miss-jwo-no-lost-passwords', plugins_url( 'no-lost-passwords.css', __FILE__ ), false );
 }
 
