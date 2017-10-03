@@ -1,7 +1,7 @@
 # No Lost Passwords
 A WordPress plugin to disable all Lost Passwords emails. 
 
-This effects **all** users.
+This affects **all** users.
 
 -----
 ## How to install
