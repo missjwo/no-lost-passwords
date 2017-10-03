@@ -1,11 +1,12 @@
 <?php
 /*
 Plugin Name:  No Lost Passwords
-Plugin URI:
+Plugin URI:   https://github.com/missjwo/no_lostpasswords
 Description:  Stop all Lost Passwords emails from being sent. Bewarned - every user will be effected.
 Version:      1.0.0
 Author:       Jenny Wong
-Author URI:   jwong.co.uk
+Author URI:   https://twitter.com/miss_jwo/
+Requires PHP: 7.0
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  no-lostpasswords
