@@ -4,6 +4,13 @@ A WordPress plugin to disable all Lost Passwords emails.
 This affects **all** users.
 
 -----
+## What does it do?
+
+This plugin:
+- stops all Lost Passwords emails from being sent to users of a WordPress website.
+- hides the Lost Passwords links from the wp-login.php screen. 
+
+-----
 ## How to install
 
 1. Download the repo as a folder
